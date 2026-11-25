@@ -175,3 +175,12 @@ respawns it.
 - A title that filters injected keystrokes (marked by the low-level input
   stack) cannot be reached with `SendInput` at all; that needs a virtual HID
   device, which requires a driver.
+
+
+## License
+
+GPL-3.0-only, full text in `LICENSE`; the source files carry the
+`SPDX-License-Identifier: GPL-3.0-only` header. In short: use it, change it,
+redistribute it, sell it if you like — but anything you distribute that builds
+on this has to ship its source under the same licence and be marked as changed.
+Copyright 2026 Sundowner.

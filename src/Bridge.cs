@@ -1,4 +1,12 @@
 // Key Inject bridge for Stream Deck (v2 SDK).
+// Copyright (C) 2026 Sundowner
+// SPDX-License-Identifier: GPL-3.0-only
+//
+// This program is free software: you can redistribute it and/or modify it under
+// the terms of the GNU General Public License version 3 as published by the
+// Free Software Foundation. It comes with no warranty at all; see the LICENSE
+// file in this repository or <https://www.gnu.org/licenses/>.
+//
 // Runs as the plugin's "Streams" bridge app. Hosts a WebSocket server on
 // 127.0.0.1:12345 that the Property Inspectors connect to, and injects real
 // keyboard input into the foreground window via the Win32 SendInput API.

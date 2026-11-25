@@ -1,4 +1,11 @@
 /* Key Inject — Property Inspector logic.
+ * Copyright (C) 2026 Sundowner
+ * SPDX-License-Identifier: GPL-3.0-only
+ *
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 3 as published by the
+ * Free Software Foundation. It comes with no warranty at all; see the LICENSE
+ * file in this repository or <https://www.gnu.org/licenses/>.
  *
  * Registers with the Stream Deck app directly, using the documented "manual"
  * WebSocket protocol (window.connectElgatoStreamDeckSocket). Settings are
