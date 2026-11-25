@@ -1,0 +1,13 @@
+# Build output — run .\build.ps1 to produce these again.
+plugin/windows/*.exe
+plugin/windows/*.prev.exe
+*.obj
+bin/
+obj/
+
+# Diagnostic probes: keep the .cs sources, not the compiled .exe
+tools/*.exe
+
+# Logs and scratch
+*.log
+*.bak

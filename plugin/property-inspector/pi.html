@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Key Inject</title>
+<link rel="stylesheet" href="pi.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="row top">
+      <span class="brand">Key Inject</span>
+      <span id="status" class="pill off" title="Bridge app that sends the keystrokes">bridge: connecting…</span>
+    </div>
+
+    <div class="hint" id="whichButton" title="Which deck slot this inspector is editing"></div>
+
+    <div class="row">
+      <label for="mode">Mode</label>
+      <select id="mode">
+        <option value="tap">Press &amp; release (tap / combo)</option>
+        <option value="hold">Hold while button is pressed</option>
+        <option value="sequence">Sequence / macro</option>
+      </select>
+    </div>
+
+    <div class="row" id="keysRow">
+      <label for="keys">Keys</label>
+      <div class="keysline">
+        <input id="keys" type="text" spellcheck="false" autocomplete="off"
+               placeholder="w  or  ctrl+shift+a">
+        <button id="capture" class="btn small" title="Click, then press the key you want (incl. Shift/Ctrl/Alt combinations)">Capture</button>
+      </div>
+      <div class="hint" id="keysHint">Single key, or a combo like <code>ctrl+shift+a</code>. Last key is the one pressed with the modifiers.</div>
+    </div>
+
+    <div class="row hidden" id="seqRow">
+      <label for="seq">Sequence</label>
+      <textarea id="seq" rows="4" spellcheck="false" autocomplete="off"
+        placeholder="w, 200, +s, 300, -s, 200, -w"></textarea>
+      <div class="hint">
+        <code>key</code> = tap · <code>+key</code> = hold down · <code>-key</code> = release ·
+        <code>200</code> or <code>200ms</code> = wait. Example above: walk forward, strafe, walk back.
+      </div>
+    </div>
+
+    <div class="row" id="releaseRow">
+      <label for="releaseMs">Safety release</label>
+      <div class="keysline">
+        <input id="releaseMs" type="number" min="100" step="100" value="10000">
+        <span class="unit">ms max hold</span>
+      </div>
+      <div class="hint">If the button is somehow released but the key stays down, it is force-released after this long.</div>
+    </div>
+
+    <div class="row" id="cooldownRow">
+      <label for="cooldown">Cooldown</label>
+      <div class="keysline">
+        <input id="cooldown" type="number" min="0" step="0.5" value="0">
+        <span class="unit">seconds</span>
+        <button id="cooldownTest" class="btn small" title="Animate this key once, without sending any keystrokes">Preview</button>
+      </div>
+      <div class="hint">After a press the key plays a draining ring until it is ready again; presses while it is still cooling down are ignored. <code>0</code> = off.</div>
+    </div>
+
+    <div class="row buttons">
+      <button id="test" class="btn">Hold test (mousedown)</button>
+      <button id="releaseAll" class="btn warn" title="Force-release every key this plugin is holding">Release all keys</button>
+    </div>
+
+    <div class="row">
+      <label for="title">Button title</label>
+      <input id="title" type="text" placeholder="auto">
+    </div>
+  </div>
+
+  <!-- Self-contained: talks to Stream Deck over the documented manual
+       WebSocket protocol (connectElgatoStreamDeckSocket in pi.js). -->
+  <script src="pi.js"></script>
+</body>
+</html>

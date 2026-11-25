@@ -1,0 +1,70 @@
+:root {
+  color-scheme: dark;
+  --bg: #1e1e1e;
+  --field: #2b2b2b;
+  --line: #3d3d3d;
+  --text: #e6e6e6;
+  --dim: #9a9a9a;
+  --accent: #d98c1f;
+  --ok: #2f9e44;
+  --off: #c92a2a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.45 "Segoe UI", system-ui, sans-serif;
+}
+
+.wrap { padding: 10px 12px; display: flex; flex-direction: column; gap: 10px; }
+
+.row { display: flex; flex-direction: column; gap: 4px; }
+.row.top { flex-direction: row; align-items: center; justify-content: space-between; }
+.row.buttons { flex-direction: row; gap: 8px; }
+
+label { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--dim); }
+
+input, select, textarea {
+  width: 100%;
+  background: var(--field);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 6px 8px;
+  font: inherit;
+}
+
+textarea { font-family: Consolas, monospace; resize: vertical; }
+
+input:focus, select:focus, textarea:focus { outline: 1px solid var(--accent); }
+
+.keysline { display: flex; gap: 6px; align-items: center; }
+.keysline input { flex: 1; }
+.unit { color: var(--dim); white-space: nowrap; font-size: 12px; }
+
+.hint { color: var(--dim); font-size: 11px; }
+.hint code { color: var(--text); background: var(--field); padding: 0 3px; border-radius: 3px; }
+
+.btn {
+  background: var(--field);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 7px 10px;
+  cursor: pointer;
+  flex: 1;
+}
+.btn:hover { border-color: var(--accent); }
+.btn:active { background: #383838; }
+.btn.small { flex: 0 0 auto; padding: 6px 8px; }
+.btn.warn { border-color: var(--off); color: #ffb3b3; }
+.btn.capturing { border-color: var(--accent); color: var(--accent); }
+
+.pill { font-size: 11px; padding: 3px 8px; border-radius: 10px; white-space: nowrap; }
+.pill.ok { background: rgba(47, 158, 68, .18); color: #8ce99a; }
+.pill.off { background: rgba(201, 42, 42, .18); color: #ffa8a8; }
+
+.hidden { display: none; }

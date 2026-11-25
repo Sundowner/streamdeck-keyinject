@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "Name": "Key Inject",
+  "Author": "Sundowner",
+  "Version": "1.0.15",
+  "Description": "Injects real keyboard input (single keys, combos, hold-to-press, timed sequences) into the focused game or app. Windows only.",
+  "Icon": "assets/plugin",
+  "UUID": "com.sundowner.keyinject",
+  "SDKVersion": 2,
+  "Software": { "MinimumVersion": "6.4" },
+  "OS": [ { "Platform": "windows", "MinimumVersion": "10" } ],
+  "CodePath": "windows/keyinject-bridge.exe",
+  "SupportURL": "https://github.com/",
+
+  "Actions": [
+    {
+      "Name": "Key Inject",
+      "UUID": "com.sundowner.keyinject.action",
+      "Icon": "assets/action",
+      "PropertyInspectorPath": "property-inspector/pi.html",
+      "Controllers": ["Keypad"],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Press, hold or sequence keyboard keys in the focused window",
+      "States": [
+        {
+          "Image": "assets/action",
+          "TitleAlignment": "bottom"
+        }
+      ]
+    }
+  ]
+}
+
